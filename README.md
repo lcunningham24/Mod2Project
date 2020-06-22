@@ -25,8 +25,7 @@ I was interested in seeing how SAT/ACT scores influenced graduation rates so I m
 
 ## Hypothesis Testing 
 
-##### ANOVA Test for ACT/SAT test score categories
-
+##### ANOVA Test for ACT/SAT Categories
 H0: there is no significant difference in grad rates for low, mid & high scoring schools
 
 Ha: there is a significant difference in grad rates for low, mid & high scoring schools 
@@ -36,11 +35,56 @@ SAT p-val = 4.729311532101925e-239
 
 We reject the null: at least one testing category is significantly different in terms of their mean grad rate
 
-##### 
+
+##### ANOVA Test for Instructional Expenditure Categories
+H0: there is no significant difference in mean graduation rates for low, mid and high instructional expenditure groups
+
+HA: there is a significant difference in mean graduation rates for low, mid and high groups
+
+p-val = 2.095381989499582e-150
+
+We reject the null: at least one spending category is significantly different in terms of their mean grad rate
+
+
+#####  ANOVA Test for Median Household Income Categories
+H0: there is no significant difference in mean graduation rates for low, mid and high median household incomes
+
+HA: there is a significant difference in mean graduation rates for low, mid and high groups
+
+p-val = 1.0872990430128435e-146
+
+We reject the null: at least one median income category is significantly different in terms of their mean grad rate
+
 
 ## Modeling 
-Multivariate Linear Regression Model
+I tested 4 models with my features: 2-degree polynomial, 3-degree polynomial, Lasso and Multivariable Linear Regression.
 
+My best fit model was my MLR model. 
+
+Multivariable Linear Regression Model
+1. Remove features that are collinear 
+2. Scale my data
+3. Train-test split 
+4. Evaluate model 
+
+R^2 = 0.833
+
+Train RMSE: 0.07037445611566073
+
+Test RMSE: 0.0683328651860831
+
+
+![Alt text](http://Users/laurencunningham/Desktop/image2.png "MLR Coefficients")
 
 ## Conclusions 
-- 
+- A college’s average test scores and their graduation rate are highly correlated
+- We can also see this in the MLR model; SAT avg has the highest coefficient
+- Faculty salary, cost of attendance, household income are all positively correlated with graduation rates 
+- Default rates, percent of low income students, age and admission rate are negatively correlated
+
+Limitations:
+- Some schools don’t report on all the features I was including so I had to drop those 
+- There was a lot of multicollinearity in the features I chose
+- The features that I was left with are pretty specific and it might be hard to get this data for all institutions to predict graduation rates 
+
+
