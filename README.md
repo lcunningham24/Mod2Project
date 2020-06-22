@@ -73,8 +73,7 @@ Train RMSE: 0.07037445611566073
 
 Test RMSE: 0.0683328651860831
 
-
-![Alt text](http://Users/laurencunningham/Desktop/image2.png "MLR Coefficients")
+![Image](coefficients.png)
 
 ## Conclusions 
 - A college’s average test scores and their graduation rate are highly correlated
